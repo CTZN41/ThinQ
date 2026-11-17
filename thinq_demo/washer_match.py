@@ -11,6 +11,9 @@ COURSES=[
 
 def number(v):return type(v) in (int,float) and math.isfinite(v)
 
+# Synthetic course defaults, not verified settings of any physical LG model.
+DEFAULTS={c['id']:{'rinse_count':2,'spin':'low' if c['id'] in ('wool','delicate') else 'medium'} for c in COURSES}
+
 def compare(facts, preferences=None):
  purpose=facts.get('purpose');temp=facts.get('temperature_c');rinse=facts.get('rinse_count');spin=facts.get('spin')
  questions=[]
@@ -40,7 +43,11 @@ def compare(facts, preferences=None):
   levels=['low','medium','high']
   new_spin=spin if spin is None or spin in c['spins'] else min(c['spins'],key=lambda v:abs(levels.index(v)-levels.index(spin)))
   changes=[{'field':k,'before':a,'after':b} for k,a,b in [('temperature_c',temp,new_temp),('rinse_count',rinse,new_rinse),('spin',spin,new_spin)] if a!=b]
+  defaults=[k for k,v in [('rinse_count',rinse),('spin',spin)] if v is None]
+  if new_rinse is None:new_rinse=DEFAULTS[c['id']]['rinse_count']
+  if new_spin is None:new_spin=DEFAULTS[c['id']]['spin']
   candidates.append({**c,'time_gap':max(lo-c['minutes'],c['minutes']-hi,0) if known else None,'changes':changes,
+   'included_stages':['wash','rinse','spin'],'defaulted_fields':defaults,
    'settings':{'course':c['id'],'temperature_c':new_temp,'rinse_count':new_rinse,'spin':new_spin}})
  def rank(c):
   gap=c['time_gap'] if known else 0
@@ -69,4 +76,4 @@ def compare(facts, preferences=None):
   'recommendation_status':status,'recommendation_reason':explanation,'needs_confirmation':needs_confirmation,'unspecified':unspecified,
   'can_simulate':chosen is not None and temp is not None and not unresolved_spin,'needs_spin_confirmation':unresolved_spin,'time_compared':known,
   'mode':'경험 기반 추천' if not facts.get('course') else '사용자 코스 진술 기반 비교 · 구형 제약 미검증',
-  'evidence':'모든 후보 코스·옵션·시간은 데모 가정입니다. 실제 FX25GFG 사양이나 조리·세탁 성능이 아닙니다.'}
+  'evidence':'모든 후보 코스·옵션·시간·기본값은 데모 가정입니다. 실제 FX25GFG 사양이나 조리·세탁 성능이 아닙니다.'}

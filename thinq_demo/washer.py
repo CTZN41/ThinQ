@@ -20,6 +20,9 @@ SCHEMA['properties'].update({'purpose':{'type':['string','null'],'enum':['genera
  'spin_change':{'type':['string','null'],'enum':['stronger','weaker',None]},
  'time_kind':{'type':'string','enum':['observed_total','wash_stage','scheduled','unknown','absent']}})
 SCHEMA['required']=list(SCHEMA['properties'])
+SCHEMA['properties'].update({'remembered_behavior':{'type':['string','null']},
+ 'request_kind':{'type':'string','enum':['transfer','usage_help','result_problem','unclear']}})
+SCHEMA['required']=list(SCHEMA['properties'])
 PENDING={}
 
 async def analyze(source,experience):
@@ -28,7 +31,8 @@ async def analyze(source,experience):
  if not key:raise ValueError('OpenAI 키 필요')
  payload={'model':model,'store':False,'max_output_tokens':1800,
   'instructions':'''Extract only stated washer experience, no model specifications. Missing fields null.
-Ignore laundry quantity. Normalize purpose from explicit use/course/material: general/wool/delicate/towels/functional. 기능성 의류 or sportswear means functional, not null. If unspecified mixed clothes are explicitly mostly functional, purpose=functional and mixed_laundry=true; this classification does NOT assert all items are compatible. mixed_laundry=true when mixing is explicit, otherwise false. Explicit incompatible named materials (wool plus towels) remain purpose=null.
+Preserve remembered button actions verbatim in remembered_behavior; do not translate button press counts into levels, RPM, temperatures or default values. A source model name is NOT evidence of the user's settings. '전처럼 해줘' without details leaves settings and purpose null. '표준으로 했어' identifies course but does NOT establish laundry material or temperature. Classify request_kind: transfer for remembered old behavior/comparison; usage_help for general how-to questions; result_problem for complaints about current results without a remembered old method; unclear otherwise. Questions about a desired future action are not proof the action was previously performed.
+Ignore laundry quantity. Normalize purpose from explicit laundry use/material: general/wool/delicate/towels/functional. 기능성 의류 or sportswear means functional, not null. If unspecified mixed clothes are explicitly mostly functional, purpose=functional and mixed_laundry=true; this classification does NOT assert all items are compatible. mixed_laundry=true when mixing is explicit, otherwise false. Explicit incompatible named materials (wool plus towels) remain purpose=null.
 Preserve the original temperature phrase in temperature_description. If a range or ambiguous shorthand such as 3~40도 or 30~40도 is given, temperature_c=null; do not silently choose an endpoint. A precise final temperature may be used when unambiguous.
 Do not assume general if purpose is absent. Spin low/medium/high only if explicitly stated, otherwise null.
 Relative statements like 탈수를 좀 쎄게, 더 세게, 강하게 바꿨다 indicate spin_change=stronger, NOT an absolute high setting. Set spin=null unless the FINAL named level (약/중/강 단계) is explicit. Never resolve a relative change by guessing the prior level. A past medium level is not the final level after an unspecified change.

@@ -9,6 +9,7 @@ from pathlib import Path
 from .config import ROOT
 from .washer_match import compare,COURSES
 from . import washer
+from .washer_adaptation import guidance
 
 DB=ROOT/'private'/'washer_cards.sqlite3'
 SESSIONS={}
@@ -40,6 +41,7 @@ def create(source,facts):
  if len(SESSIONS)>=100:raise ValueError('세션 수 초과')
  sid=secrets.token_urlsafe(24)
  SESSIONS[sid]={'id':sid,'source':source,'facts':copy.deepcopy(facts),'preferences':copy.deepcopy(PREF),
+                'original_facts':copy.deepcopy(facts),'unknown_fields':[],'new_choices':{},
                 'selected':None,'proposal':None,'card_id':None,'history':[],'expires':now+7200}
  event(SESSIONS[sid],'extract','사용자가 입력한 경험에서 추출. 구형 제품 사양 검증과 별개입니다.')
  return view(SESSIONS[sid])
@@ -51,9 +53,12 @@ def get(sid):
  return s
 
 def view(s):
- result=compare(s['facts'],s['preferences'])
+ effective=copy.deepcopy(s['facts'])
+ if 'spin' in s.get('unknown_fields',[]) and effective.get('spin') is None:
+  effective['spin_change']=None;effective['spin_rpm']=None
+ result=compare(effective,s['preferences'])
  selected=next((c for c in result['candidates'] if c['id']==s['selected']),None)
- return {**copy.deepcopy(s),**result,'selected_course':selected,'can_run':selected is not None and selected['settings']['temperature_c'] is not None and not result['needs_spin_confirmation']}
+ return {**copy.deepcopy(s),**result,**guidance(s,result),'selected_course':selected,'can_run':selected is not None and selected['settings']['temperature_c'] is not None and not result['needs_spin_confirmation']}
 
 async def begin(source,experience):
  r=await washer.analyze(source,experience)
@@ -63,13 +68,32 @@ async def begin(source,experience):
 
 def act(sid,action,data):
  s=get(sid)
- if action=='update':
+ if action=='answer':
+  question=view(s)['next_question']
+  if not question or data.get('field')!=question['field']:raise ValueError('현재 질문에 답해주세요.')
+  field=question['field'];value=data.get('value')
+  if value is None:
+   if not question['allow_unknown']:raise ValueError('이번에 사용할 값을 선택해주세요.')
+   if field not in s['unknown_fields']:s['unknown_fields'].append(field)
+   event(s,'unknown',field+' 과거 값 모름. 원래 진술을 보존하고 설정을 추측하지 않습니다.')
+  else:
+   if not any(type(value)==type(c['value']) and value==c['value'] for c in question['choices']):raise ValueError('지원하지 않는 답변')
+   s['facts'][field]=value
+   if field in s['unknown_fields']:s['unknown_fields'].remove(field)
+   s['new_choices'][field]=value
+   event(s,'answer',field+' 사용자 선택: '+str(value)+' (과거 원문은 별도 보존)')
+  s['selected']=None;s['proposal']=None
+ elif action=='update':
   patch=data.get('facts',{})
   allowed={'purpose','temperature_c','course','rinse_count','spin','time_kind','time_min','time_max','drying_included'}
   if not isinstance(patch,dict) or not set(patch)<=allowed:raise ValueError('허용되지 않는 답변')
   f={**s['facts'],**patch}
   pref=data.get('preferences',s['preferences'])
   compare(f,pref)
+  for field,value in patch.items():
+   if value!=s['facts'].get(field):
+    s['new_choices'][field]=value
+    if value is not None and field in s['unknown_fields']:s['unknown_fields'].remove(field)
   s['facts']=f;s['preferences']=copy.deepcopy(pref);s['selected']=None;s['proposal']=None
   event(s,'answer','추가 답변·유지 조건·우선순위 반영. 이전 선택을 해제했습니다.')
  elif action=='select':
@@ -87,7 +111,7 @@ def act(sid,action,data):
   if not 1<=len(name)<=60:raise ValueError('카드 이름은 1~60자')
   s['card_id']=s['card_id'] or secrets.token_hex(12)
   event(s,'save','경험 카드 로컬 저장: '+name)
-  payload={k:copy.deepcopy(s[k]) for k in ['source','facts','preferences','selected','history']}
+  payload={k:copy.deepcopy(s[k]) for k in ['source','facts','preferences','selected','history','original_facts','unknown_fields','new_choices']}
   payload.update({'profile':'LIFEPRINT-WASHER-DEMO-v1','evidence':'합성 코스 가정 / 사용자 경험','result_verified':False})
   with connect() as conn:conn.execute('INSERT OR REPLACE INTO cards VALUES(?,?,?)',(s['card_id'],name,json.dumps(payload,ensure_ascii=False)))
  elif action=='feedback':
@@ -124,5 +148,7 @@ def load(card_id):
  if not row:raise ValueError('카드 없음')
  card=json.loads(row[0]);v=create(card['source'],card['facts']);s=get(v['id'])
  s.update({'preferences':card['preferences'],'selected':card['selected'],'history':card['history'],'card_id':card_id})
+ for k in ['original_facts','unknown_fields','new_choices']:
+  if k in card:s[k]=card[k]
  event(s,'load','저장한 경험을 현재 데모 프로필로 재검증해 불러왔습니다.')
  return view(s)

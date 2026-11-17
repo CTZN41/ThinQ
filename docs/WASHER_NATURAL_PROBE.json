@@ -1,0 +1,102 @@
+[
+  {
+    "input": "전에 쓰던 것처럼 해줘.",
+    "model": "gpt-6-luna",
+    "facts": {
+      "temperature_c": null,
+      "time_description": null,
+      "course": null,
+      "laundry": null,
+      "outcome": null,
+      "drying_included": null,
+      "time_min": null,
+      "time_max": null,
+      "rinse_count": null,
+      "spin": null,
+      "purpose": null,
+      "temperature_description": null,
+      "mixed_laundry": false,
+      "spin_rpm": null,
+      "spin_change": null,
+      "time_kind": "absent",
+      "remembered_behavior": null,
+      "request_kind": "transfer"
+    },
+    "passed": true
+  },
+  {
+    "input": "전에는 그냥 표준으로 놓고 탈수 버튼만 한 번 더 눌렀어. 잘 말랐거든.",
+    "model": "gpt-6-luna",
+    "facts": {
+      "temperature_c": null,
+      "time_description": null,
+      "course": "표준",
+      "laundry": null,
+      "outcome": "잘 말랐음",
+      "drying_included": null,
+      "time_min": null,
+      "time_max": null,
+      "rinse_count": null,
+      "spin": null,
+      "purpose": null,
+      "temperature_description": null,
+      "mixed_laundry": false,
+      "spin_rpm": null,
+      "spin_change": null,
+      "time_kind": "absent",
+      "remembered_behavior": "탈수 버튼만 한 번 더 눌렀어",
+      "request_kind": "transfer"
+    },
+    "passed": true
+  },
+  {
+    "input": "운동할 때 입는 옷은 어떻게 빨아? 망가질까 봐.",
+    "model": "gpt-6-luna",
+    "facts": {
+      "temperature_c": null,
+      "time_description": null,
+      "course": null,
+      "laundry": "운동할 때 입는 옷",
+      "outcome": null,
+      "drying_included": null,
+      "time_min": null,
+      "time_max": null,
+      "rinse_count": null,
+      "spin": null,
+      "purpose": "functional",
+      "temperature_description": null,
+      "mixed_laundry": false,
+      "spin_rpm": null,
+      "spin_change": null,
+      "time_kind": "absent",
+      "remembered_behavior": null,
+      "request_kind": "usage_help"
+    },
+    "passed": true
+  },
+  {
+    "input": "새 세탁기에서 빨면 너무 구겨져.",
+    "model": "gpt-6-luna",
+    "facts": {
+      "temperature_c": null,
+      "time_description": null,
+      "course": null,
+      "laundry": null,
+      "outcome": "너무 구겨져",
+      "drying_included": null,
+      "time_min": null,
+      "time_max": null,
+      "rinse_count": null,
+      "spin": null,
+      "purpose": null,
+      "temperature_description": null,
+      "mixed_laundry": false,
+      "spin_rpm": null,
+      "spin_change": null,
+      "time_kind": "absent",
+      "remembered_behavior": null,
+      "request_kind": "result_problem"
+    },
+    "passed": true
+  }
+]

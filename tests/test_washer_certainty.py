@@ -13,7 +13,8 @@ class CertaintyTests(unittest.TestCase):
  def test_unknown_optional_not_invented(self):
   r=compare(dict(purpose='wool',temperature_c=30))
   self.assertEqual(r['unspecified'],['rinse_count','spin'])
-  self.assertIsNone(r['recommended']['settings']['spin'])
+  self.assertEqual(r['recommended']['settings']['spin'],'low')
+  self.assertEqual(r['recommended']['defaulted_fields'],['rinse_count','spin'])
  def test_unsupported_has_reason(self):
   r=compare(dict(purpose='wool',temperature_c=60))
   self.assertEqual(r['recommendation_status'],'unsupported')
