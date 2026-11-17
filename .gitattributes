@@ -1,2 +1,4 @@
 # Preserve exact snapshot bytes so SHA256 manifests survive checkout.
 data/lg_catalog_2026-11-17/** -text
+data/lg_catalog_merged_2026-11-17/** -text
+data/lg_three_categories_2026-11-17/** -text

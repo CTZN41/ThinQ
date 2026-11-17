@@ -1,0 +1,15 @@
+{
+  "code/collect.py": "bb460a99df861288327dd186afde0746977e7465d7bee5e6eb50039eae5e5aa5",
+  "code/crawl.py": "cefbc71c77a47db646b8a4be36b3a840d759c27b8d4dcc4b5e18b6c1a4a12063",
+  "code/export_official_specs.py": "cf220e190a3bdc061fd36a28fd373211d0decb36947a598fde9ade21ac4253a0",
+  "code/export_three_categories.py": "917cdb4804228e55be97e7fe9038eda1f5c4cceec4c458f757e363450c342dbb",
+  "code/flight_helpers.py": "f855002e39dd70253380e2cb71ba03984258bd95c301784caabe813084ac7705",
+  "code/merge.py": "13622a5c0284de51789ca337cc6a5bd0ec954189e6e3c41108ce00bff9415cb0",
+  "inputs/baseline.json": "0472efbc5becaaa2737ba4ec47fd832469f3e5f60a1801183aae0b3b2211c7ae",
+  "inputs/products_current.json": "67e3b9118db8ac1e99f1ec530926e19befe60b59dfdbb81a09347d14317a8f45",
+  "inputs/same_model_variants.json": "96bf8231eef63766378a475f0d1f4208668e8a9ad4542625fa274ff0103f65a3",
+  "LG_제품DB_합본.csv": "7ddc4cf8e8fdd6c2fca4632bbc47b72cb859a77ec3475964969b0983ab9a9c43",
+  "products_merged.json": "825015a9e99c58b8a7673efc1c19c54faaff426dc6f7becdcca13d578931b82f",
+  "README.md": "577df94217b73fcf2491c57287e183028e256d5c025a3015a4ab56217421d51b",
+  "validation.json": "cf688d8f6e6fa187e18d91c659f48aaaca7f8df856dc9d62a8c109c6a6999d85"
+}

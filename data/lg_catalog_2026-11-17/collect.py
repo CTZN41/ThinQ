@@ -1,5 +1,5 @@
 """Refresh three LG public catalogs; reuse LifeFit's Flight parser, no auth."""
-import ast,csv,hashlib,json,math,re,time,urllib.request
+import ast,csv,hashlib,json,math,re,time,urllib.request,sys
 from pathlib import Path
 from datetime import datetime,timezone
 from concurrent.futures import ThreadPoolExecutor,as_completed
@@ -39,7 +39,7 @@ def discover():
     if m.get('modelName'):found[(m['modelName'],m.get('modelId'))]=m
    time.sleep(.2)
   coverage.append({'category':cat,'expected_listings':total,'collected_listings':len(found),'complete':len(found)==total})
-  for (name,mid),m in found.items():records[(cat,name)]=m
+  for (name,mid),m in found.items():records[(cat,name,mid)]=m
   print('CATALOG',coverage[-1],flush=True)
  (OUT/'coverage.json').write_text(json.dumps(coverage,ensure_ascii=False,indent=2),encoding='utf-8')
  (OUT/'catalog.json').write_text(json.dumps([{'category':k[0],**v} for k,v in records.items()],ensure_ascii=False),encoding='utf-8')
@@ -63,8 +63,11 @@ def specs(doc):
    seen.add(key);rows.append({'group':g['title'],'name':item['name'],'value':item['value'],'description':(item.get('glossary') or {}).get('textContent')})
  return rows
 def collect(key,m,old):
- cat,name=key;safe=re.sub('[^A-Za-z0-9_-]','_',name);dest=OUT/'products'/f'{cat}_{safe}.json'
- if dest.exists():return json.loads(dest.read_text(encoding='utf-8'))
+ cat,name,mid=key;safe=re.sub('[^A-Za-z0-9_-]','_',name+'_'+str(mid));dest=OUT/'products'/f'{cat}_{safe}.json'
+ # A new run refreshes the page. Explicit --resume is only for interrupted runs.
+ if '--resume' in sys.argv and dest.exists():
+  cached=json.loads(dest.read_text(encoding='utf-8'))
+  if cached.get('status')=='ok' and cached.get('listing_model_id')==mid:return cached
  url='https://www.lge.co.kr'+m['modelUrlPath'];stamp=datetime.now(timezone.utc).isoformat()
  row={'category':CATS[cat],'model':name,'name':m.get('modelDisplayName'),'source_url':url,'collected_at':stamp,'new_to_baseline':name not in old,'listing_status':m.get('modelStatusCode'),'listing_model_id':m.get('modelId'),'release_date_raw':m.get('modelReleaseDate'),'listing_price':m.get('priceInfo') or {'sale_price':m.get('obsSellingPrice')},'specs':[],'is_set':m.get('mixProductFlag'),'api_control_verified':False}
  try:
@@ -74,7 +77,7 @@ def collect(key,m,old):
   for script in re.findall(r'<script[^>]*type="application/ld\+json"[^>]*>(.*?)</script>',doc,re.S|re.I):
    try:products.extend(o for o in dictionaries(json.loads(script)) if o.get('@type')=='Product')
    except ValueError:pass
-  product=next((p for p in products if name.lower() in str(p.get('sku','')).lower() or name.lower() in str(p.get('name','')).lower()),None)
+  product=next((p for p in products if str(p.get('model','')).upper()==name.upper() or str(p.get('sku','')).split('.')[0].upper()==name.upper()),None)
   if not product:raise ValueError('product identity not confirmed')
   row['product_schema']=product;row['specs']=specs(doc)
   if not row['specs']:raise ValueError('specifications missing')

@@ -1,0 +1,411 @@
+{
+  "category": "에어컨",
+  "model": "FQ18HDWHY2",
+  "name": "LG 휘센 오브제컬렉션 위너 에어컨 2in1",
+  "source_url": "https://www.lge.co.kr/air-conditioners/fq18hdwhy2",
+  "collected_at": "2026-11-17T08:12:02.800513+00:00",
+  "new_to_baseline": true,
+  "listing_status": "NOT_FOR_SALE",
+  "listing_model_id": "MD10160840",
+  "release_date_raw": "2023-08-11T00:00:00",
+  "listing_price": {
+    "obsOriginalPrice": 2609000,
+    "obsSellingPrice": 2350000,
+    "obsMemberPrice": 259000,
+    "obsDiscountPrice": 0,
+    "obsSpecialDiscount": 0,
+    "obsControlPrice": 1175000,
+    "partnerPrice": 0,
+    "couponPrice": 200000,
+    "lastBenefitPrc": 1999500,
+    "discountApplyPrice": 1999500,
+    "disposablePriceInfo": null
+  },
+  "specs": [
+    {
+      "group": "기본사양",
+      "name": "제품유형",
+      "value": "2in1",
+      "description": "다양한 에어컨 유형 중 주거 환경에 따라 우리집에 어울리는 타입을 선택하시는 것을 추천 드립니다.\n\n[2in1 vs 스탠드]\n2in1이 경제적인 이유!\n침실엔 에어컨이 없어도 될 것 같아 2in1과 스탠드 사이에서 고민하는 경우가 많습니다. 하지만 대부분 처음부터 2in1을 선택합니다. 따로 사면 실내기 2대와 실외기 2대의 가격이지만, 2in1은 실내기 2대에 실외기는 1대만 구매하면 되기 때문에 훨씬 경제적이고 설치도 편리합니다."
+    },
+    {
+      "group": "기본사양",
+      "name": "냉방능력(정격/최소)(W)",
+      "value": "7,200 / 1,600",
+      "description": null
+    },
+    {
+      "group": "기본사양",
+      "name": "최대냉방능력(W)",
+      "value": "9,500",
+      "description": null
+    },
+    {
+      "group": "기본사양",
+      "name": "냉방소비전력(정격/최소)(W)",
+      "value": "2,200 / 320",
+      "description": null
+    },
+    {
+      "group": "기본사양",
+      "name": "정격전압(V, Hz)",
+      "value": "220, 60",
+      "description": null
+    },
+    {
+      "group": "기본사양",
+      "name": "실외기 크기_WxHxD(mm)",
+      "value": "870 x 650 x 330",
+      "description": null
+    },
+    {
+      "group": "기본사양",
+      "name": "실외기 크기_WxHxD(mm) *배관커버/레그 적용 시",
+      "value": "975 x 650 x 390",
+      "description": null
+    },
+    {
+      "group": "기본사양",
+      "name": "냉방면적(스탠드+벽걸이)(m²)",
+      "value": "77.2(58.5+18.7)",
+      "description": "에어컨을 구매하기 전 우리 집 면적을 먼저 확인해 주세요. 이때 기준은 집 전체 면적이 아니라 '에어컨을 설치할 공간'입니다. 침실이나 거실 등 에어컨을 설치할 공간을 고려해 적합한 면적의 에어컨을 구매하는 것이 냉방효율을 높일 수 있습니다.\n\nTIP1.\n점점 길어지고 폭염이 많아진 여름, 베란다 확장으로 거실이 넓어진 주거 트렌드를 고려했을 때 냉방면적이 조금 더 큰 에어컨을 추천합니다.\n\nTIP2.\n거실에 설치할 경우, 아파트는 공급면적의 1/2 이상. 주택/빌라는 전용면적의 2/3 이상.\n방이나 원룸에 설치할 경우에는 해당 공간의 면적과 동일하게 선택하시는 것을 추천합니다."
+    },
+    {
+      "group": "기본사양",
+      "name": "스탠드 실내기 크기 WxHxD(mm)",
+      "value": "350 x 1,820 x 300",
+      "description": null
+    },
+    {
+      "group": "청정",
+      "name": "자동 청정 관리",
+      "value": "O(3단계)",
+      "description": "바람이 지나가는 길을 알아서 청소하여 에어컨 안을 깨끗하게 유지해 줍니다"
+    },
+    {
+      "group": "필터",
+      "name": "극세필터+",
+      "value": "O",
+      "description": "먼지를 걸러내는 극세필터에 항균처리를 해서 먼지에 있는 세균의 번식을 억제하여 위생적인 환경을 조성합니다."
+    },
+    {
+      "group": "위생",
+      "name": "열교환기 세척",
+      "value": "O",
+      "description": "에어컨 밖으로 내보내는 바람을 만드는 열교환기의 먼지와 세균을 제거합니다."
+    },
+    {
+      "group": "위생",
+      "name": "AI 건조",
+      "value": "O(AI건조+)",
+      "description": "냉방 또는 제습 운전을 하다가 제품의 전원을 끌 경우 AI 건조를 시작합니다. 일정 시간 동안 제품을 송풍 상태로 운전하여 열교환기에 남은 수분을 제거합니다."
+    },
+    {
+      "group": "냉방",
+      "name": "아이스 쿨파워",
+      "value": "O",
+      "description": "LG WHISEN만의 강력한 냉방 성능을 의미합니다. 일반 냉방보다 4°C 더 낮은 바람으로 설정 온도까지 더 빠르게 냉방해 줍니다."
+    },
+    {
+      "group": "냉방",
+      "name": "바람세기",
+      "value": "3단계",
+      "description": "원하는 바람 세기를 간편하게 조절할 수 있습니다. 바람세기 버튼을 누를 때마다 약풍-중풍-강풍-자연풍 순으로 반복됩니다."
+    },
+    {
+      "group": "냉방",
+      "name": "포커스냉방",
+      "value": "O",
+      "description": "FAN을 형상화한 디자인이 압축된 바람을 사각지대 없이 유려한 흐름으로 내보냅니다."
+    },
+    {
+      "group": "냉방",
+      "name": "인공지능 스마트케어",
+      "value": "O (상황/패턴학습)",
+      "description": "집안 환경 및 사용 패턴을 파악해 알아서 냉방, 청정. 제습을 해주는 기능입니다. 에어컨에 있는 스마트케어 버튼을 누르거나 리모컨으로 실행할 수 있습니다. 인체 감지 센서 탑재 모델은 실내에 사람이 있는지 없는지에 따라 냉방을 조절해 줘 절전 효과를 누릴 수 있습니다."
+    },
+    {
+      "group": "절전",
+      "name": "인공지능 듀얼 인버터",
+      "value": "O",
+      "description": "실내 온도를 감지하여 빠르게 실내 온도를 낮춰줍니다. 설정한 온도가 되면 에너지를 절약하는 운전으로 전환해 쾌적한 상태를 유지해 줍니다."
+    },
+    {
+      "group": "절전",
+      "name": "전력량 표시",
+      "value": "O",
+      "description": null
+    },
+    {
+      "group": "절전",
+      "name": "에너지 소비효율 등급",
+      "value": "3등급",
+      "description": null
+    },
+    {
+      "group": "절전",
+      "name": "절전 냉방",
+      "value": "O",
+      "description": "절전 냉방 운전 시 희망온도가 자동으로 조절되어 전기료를 절약할 수 있습니다."
+    },
+    {
+      "group": "제습",
+      "name": "듀얼 맞춤 제습(강력/절전)",
+      "value": "O",
+      "description": "강력 제습 기능은 하루에 100l까지 습기를 제거할 수 있으며, 절전 제습 기능은 일반 제습기(용량 15l 기준)와 비슷한 수준의 전기를 사용하면서도 더 많은 습기를 제거합니다."
+    },
+    {
+      "group": "편리",
+      "name": "펫케어",
+      "value": "O",
+      "description": "반려동물이 혼자 집에 있을 때 ThinQ 앱의 펫케어 기능으로 실내 온도를 모니터링하고 온도가 올라가면 에어컨을 켜주거나 알림을 받아볼 수 있습니다."
+    },
+    {
+      "group": "편리",
+      "name": "꺼짐/켜짐 예약 (24시간)",
+      "value": "O",
+      "description": null
+    },
+    {
+      "group": "편리",
+      "name": "ThinQ(Wi-Fi)",
+      "value": "O",
+      "description": null
+    },
+    {
+      "group": "편리",
+      "name": "열대야 절전취침",
+      "value": "O",
+      "description": "인체의 수면 단계에 따라 자동으로 세밀하게 온도를 조절하여 열대야에도 알맞은 온도로 숙면을 취할 수 있습니다."
+    },
+    {
+      "group": "편리",
+      "name": "스마트 진단",
+      "value": "O",
+      "description": "제품의 고장 원인을 진단할 수 있는 기능입니다. 제품에 스마트 진단 로고가 있는 모델에만 적용되며 진단을 진행하는 동안 진단음이 발생하므로 상담원 연결 시에만 사용하시고 평상시에는 작동하지 마시기 바랍니다."
+    },
+    {
+      "group": "편리",
+      "name": "리모컨",
+      "value": "일반",
+      "description": null
+    },
+    {
+      "group": "편리",
+      "name": "UP 가전",
+      "value": "O",
+      "description": "쓰고 있는 제품을 업데이트할 수 있는 기능입니다. 라이프스타일과 취향에 맞춰 업그레이드된 기능으로 매일 새롭고 더 좋은 경험을 하실 수 있습니다. 게다가 제품 사용 중에 불편이나 문제가 있을 때 새로운 기능을 알려주거나 문제를 해결해 주기도 합니다."
+    },
+    {
+      "group": "편리",
+      "name": "희망온도 0.5도 미세조절",
+      "value": "O(ThinQ only)",
+      "description": null
+    },
+    {
+      "group": "디자인",
+      "name": "색상",
+      "value": "크림 화이트",
+      "description": null
+    },
+    {
+      "group": "디자인",
+      "name": "디스플레이",
+      "value": "LED(그레이)",
+      "description": "제품 조작 및 작동상태를 확인 할 수 있는 화면입니다."
+    },
+    {
+      "group": "디자인",
+      "name": "토출구 커버",
+      "value": "매직 그레이",
+      "description": null
+    },
+    {
+      "group": "실외기",
+      "name": "실외기 모델명",
+      "value": "FQ24DNAU",
+      "description": null
+    },
+    {
+      "group": "서비스매뉴얼 실내기 모델명",
+      "name": "스탠드 실내기 모델명",
+      "value": "FQ18HDWHRN",
+      "description": null
+    },
+    {
+      "group": "서비스매뉴얼 실내기 모델명",
+      "name": "벽걸이 실내기 모델명",
+      "value": "SQ06BDAWBJ",
+      "description": null
+    },
+    {
+      "group": "2in1 벽걸이",
+      "name": "벽걸이 모델명",
+      "value": "SQ06BDAWBJ",
+      "description": null
+    },
+    {
+      "group": "2in1 벽걸이",
+      "name": "벽걸이 실내기 크기 WxHxD(mm)",
+      "value": "754 x 308 x 189",
+      "description": null
+    },
+    {
+      "group": "기본정보",
+      "name": "품명 및 모델명",
+      "value": "2in1 & 냉방기(FQ18HDWHY2)",
+      "description": null
+    },
+    {
+      "group": "기본정보",
+      "name": "KC 인증 필 유무",
+      "value": "<table ><tbody><tr><td class=\"spec_kcc\"><img src=\"/kr/pdp-common/kcclogo.jpg\" width=\"27\" height=\"40\" alt=\"KC 인증\"></td></tr></tbody></table>",
+      "description": null
+    },
+    {
+      "group": "기본정보",
+      "name": "KC인증조회",
+      "value": "<a href=\"https://www.consumer.go.kr/user/ftc/consumer/crtfc/73/selectCrtfcInfoList.do?crtfcCdS=03\" target=\"_blank\" title=\"새창열림\">공정거래위원회(소비자24)제공 인증정보 조회</a>",
+      "description": null
+    },
+    {
+      "group": "기본정보",
+      "name": "전기용품 안전인증(확인신고) 번호",
+      "value": "HM07125-22170",
+      "description": null
+    },
+    {
+      "group": "기본정보",
+      "name": "전자파 적합성 인증(등록) 번호",
+      "value": "R-R-LGE-FQ230102",
+      "description": null
+    },
+    {
+      "group": "기본정보",
+      "name": "전자파 적합성 인증(등록) 번호 (무선모듈)",
+      "value": "R-C-LGE-LCWB-001",
+      "description": null
+    },
+    {
+      "group": "기본정보",
+      "name": "동일모델의 출시년월",
+      "value": "2023-08",
+      "description": null
+    },
+    {
+      "group": "기본정보",
+      "name": "제조자",
+      "value": "LG전자(주)",
+      "description": null
+    },
+    {
+      "group": "기본정보",
+      "name": "제조국",
+      "value": "스탠드 : 한국, 실외기 : 한국, 벽걸이 : 중국",
+      "description": null
+    },
+    {
+      "group": "기본정보",
+      "name": "품질보증기준",
+      "value": "결함·하자 등에 따른 소비자피해에 대해서는 소비자분쟁해결기준(소비자기본법 제 16조)에 따라 보상 가능",
+      "description": null
+    },
+    {
+      "group": "기본정보",
+      "name": "A/S 책임자와 전화번호",
+      "value": "LG전자서비스센터 / 1544-7777",
+      "description": null
+    }
+  ],
+  "is_set": "N",
+  "api_control_verified": false,
+  "final_url": "https://www.lge.co.kr/product/air-conditioners/fq18hdwhy2?modelId=MD10160840&pdpType=PURCHASE",
+  "html_sha256": "91883129f376b13f72fee5e378f5b80e9adf9addb882bdf627172d6037088695",
+  "product_schema": {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "@id": "https://www.lge.co.kr/product/air-conditioners/fq18hdwhy2",
+    "url": "https://www.lge.co.kr/product/air-conditioners/fq18hdwhy2",
+    "name": "LG 휘센 오브제컬렉션 위너 에어컨 2in1",
+    "description": "LG전자의 에어컨/에어케어 기기를 소개합니다. 추천 상품부터, 다양한 혜택 정보까지 에어컨/에어케어 홈에서 확인해보세요.",
+    "image": "https://www.lge.co.kr/kr/images/air-conditioners/md10069830/gallery/medium01.jpg",
+    "sku": "FQ18HDWHY2.AKOR",
+    "model": "FQ18HDWHY2",
+    "category": "에어컨/에어케어/에어컨",
+    "brand": {
+      "@type": "Brand",
+      "name": "LG",
+      "url": "https://www.lge.co.kr"
+    },
+    "manufacturer": {
+      "@id": "https://www.lge.co.kr#organization"
+    },
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "5.0",
+      "reviewCount": "664",
+      "bestRating": "5",
+      "worstRating": "1"
+    },
+    "additionalProperty": [
+      {
+        "@type": "PropertyValue",
+        "name": "냉방면적(스탠드+벽걸이)(m²)",
+        "value": "77.2(58.5+18.7)"
+      },
+      {
+        "@type": "PropertyValue",
+        "name": "인공지능 스마트케어",
+        "value": "O (상황/패턴학습)"
+      }
+    ],
+    "review": [
+      {
+        "@type": "Review",
+        "datePublished": "2025-05-23",
+        "author": {
+          "@type": "Person",
+          "name": "김*주"
+        },
+        "reviewBody": "에어컨 구입하면서 이렇게 많은 기능이 있는지 처음 알았습니다. 기능이 많으면 효율성이 떨어질 수도 있다고 생각했지만 큰 착각입니다. 가격 대비 성능 엄청 좋아요. 특히 소음 적고 뒤에 보시면 필터 청소가 쉬워서 아기 키우는 저희 집에서는 제일 적합한 제품 같습니다. 자동으로 한번만 키고 온도가 유지 되니 전력량도 많이 소모 되지 않습니다. 정말 꼼꼼히 비교한 덕분인지 너무 만족한 제품이라 추천드립니다.",
+        "reviewRating": {
+          "@type": "Rating",
+          "ratingValue": "5",
+          "bestRating": "5",
+          "worstRating": "1"
+        }
+      },
+      {
+        "@type": "Review",
+        "datePublished": "2024-11-21",
+        "author": {
+          "@type": "Person",
+          "name": "김*혜"
+        },
+        "reviewBody": "8월 말 이사하면서 주문 했는데 기사님 두 분이 정말 친절하시고 깔끔하게 설치해 주고 가셨어요 이번 여름이 길고 더워서 9월까지 잘 썼고요 앱과 연동하면 장기간 사용 안할 경우 세척 등의 관리를 할 수 있어서 좋더라고요. 지금은 내년을 기다리며 ㅎㅎ 잘 대기 중입니다 :)",
+        "reviewRating": {
+          "@type": "Rating",
+          "ratingValue": "5",
+          "bestRating": "5",
+          "worstRating": "1"
+        }
+      },
+      {
+        "@type": "Review",
+        "datePublished": "2024-08-15",
+        "author": {
+          "@type": "Person",
+          "name": "문*주"
+        },
+        "reviewBody": "설치도 빠르고 꼼꼼하게 잘 해주시고 배송도 바로 되서 더운 여름 잘 쓰고 있어요! 정말 감사합니다~",
+        "reviewRating": {
+          "@type": "Rating",
+          "ratingValue": "5",
+          "bestRating": "5",
+          "worstRating": "1"
+        }
+      }
+    ]
+  },
+  "status": "ok"
+}

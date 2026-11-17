@@ -1,0 +1,33 @@
+{
+  "baseline_records": 553,
+  "crawled_listing_records": 437,
+  "crawled_distinct_models": 428,
+  "merged_records": 855,
+  "merged_distinct_models": 846,
+  "new_distinct_models": 293,
+  "matched_baseline_models": 135,
+  "unmatched_baseline_in_scope": 6,
+  "current_listing_status_counts": {
+    "NOT_FOR_SALE": 205,
+    "ACTIVE": 169,
+    "SOLD_OUT": 16,
+    "READY_FOR_SALE": 47
+  },
+  "merge_status_counts": {
+    "이번 수집 범위 밖·기존 보존": 412,
+    "기존 DB에 없는 모델 추가": 302,
+    "기존 모델 갱신": 135,
+    "이번 목록 미확인(단종 판단 불가)": 6
+  },
+  "checks": {
+    "unique_record_ids": true,
+    "all_legacy_models_preserved": true,
+    "all_legacy_fields_preserved": true,
+    "all_current_details_verified": true
+  },
+  "input_sha256": {
+    "baseline.json": "0472efbc5becaaa2737ba4ec47fd832469f3e5f60a1801183aae0b3b2211c7ae",
+    "products_current.json": "67e3b9118db8ac1e99f1ec530926e19befe60b59dfdbb81a09347d14317a8f45",
+    "same_model_variants.json": "96bf8231eef63766378a475f0d1f4208668e8a9ad4542625fa274ff0103f65a3"
+  }
+}

@@ -1,0 +1,392 @@
+{
+  "category": "에어컨",
+  "model": "SQ06ADJCAJ",
+  "name": "LG 휘센 오브제컬렉션 벽걸이에어컨 (2in1)",
+  "source_url": "https://www.lge.co.kr/air-conditioners/sq06adjcaj-akory",
+  "collected_at": "2026-11-17T08:12:07.609887+00:00",
+  "new_to_baseline": true,
+  "listing_status": "NOT_FOR_SALE",
+  "listing_model_id": "MD09863827",
+  "release_date_raw": "2023-01-19T00:00:00",
+  "listing_price": {
+    "obsOriginalPrice": 0,
+    "obsSellingPrice": 0,
+    "obsMemberPrice": 0,
+    "obsDiscountPrice": 0,
+    "obsSpecialDiscount": 0,
+    "obsControlPrice": 0,
+    "partnerPrice": 0,
+    "couponPrice": 0,
+    "lastBenefitPrc": 0,
+    "discountApplyPrice": 0,
+    "disposablePriceInfo": null
+  },
+  "specs": [
+    {
+      "group": "기본사양",
+      "name": "냉방능력(정격/최소)(W)",
+      "value": "2,300",
+      "description": null
+    },
+    {
+      "group": "기본사양",
+      "name": "냉방소비전력(정격/최소)(W)",
+      "value": "530",
+      "description": null
+    },
+    {
+      "group": "기본사양",
+      "name": "정격전압(V, Hz)",
+      "value": "220, 60",
+      "description": null
+    },
+    {
+      "group": "기본사양",
+      "name": "실내기 크기_WxHxD(mm)",
+      "value": "857 x 348 x 192",
+      "description": null
+    },
+    {
+      "group": "기본사양",
+      "name": "냉방면적(m²)",
+      "value": "18.7",
+      "description": "에어컨을 구매하기 전 우리 집 면적을 먼저 확인해 주세요. 이때 기준은 집 전체 면적이 아니라 '에어컨을 설치할 공간'입니다. 침실이나 거실 등 에어컨을 설치할 공간을 고려해 적합한 면적의 에어컨을 구매하는 것이 냉방효율을 높일 수 있습니다.\n\nTIP1.\n점점 길어지고 폭염이 많아진 여름, 베란다 확장으로 거실이 넓어진 주거 트렌드를 고려했을 때 냉방면적이 조금 더 큰 에어컨을 추천합니다.\n\nTIP2.\n거실에 설치할 경우, 아파트는 공급면적의 1/2 이상. 주택/빌라는 전용면적의 2/3 이상.\n방이나 원룸에 설치할 경우에는 해당 공간의 면적과 동일하게 선택하시는 것을 추천합니다."
+    },
+    {
+      "group": "청정",
+      "name": "PM 1.0 센서",
+      "value": "O",
+      "description": "아주 작은 극초미세먼지까지 실시간으로 정밀하게 잡아낼 수 있는 PM 1.0 센서가 탑재되어 오염된 공기가 감지되면 공기청정 기능을 작동해 실내 공기를 깨끗하게 만들어 줍니다."
+    },
+    {
+      "group": "청정",
+      "name": "공기청정 디스플레이",
+      "value": "O",
+      "description": null
+    },
+    {
+      "group": "청정",
+      "name": "집진 이오나이저",
+      "value": "O",
+      "description": "에어컨에서 먼지를 모으는 장치입니다. 제품 뒷면 필터의 가운데 부분에 위치하고 있습니다. 플러스 필터 주변에 이온을 생성하여 먼지를 모으고 모인 먼지가 필터에 달라붙어 집진하여 실내 공기를 깨끗하게 유지하는 데 도움을 줍니다."
+    },
+    {
+      "group": "청정",
+      "name": "인공지능 365 공기청정",
+      "value": "O",
+      "description": "제품 운전 중 종합 청정도가 3단계(나쁨) 이상일 경우 공기 청정 기능을 따로 설정하지 않았더라도 자동으로 공기 청정 운전을 시작합니다. 종합 청정도가 1단계(좋음)가 되면 1단계(좋음)까지 걸린 시간만큼 365 공기청정으로 한번 더 운전한 후 해당 기능을 종료합니다."
+    },
+    {
+      "group": "청정",
+      "name": "CAC 인증",
+      "value": "O",
+      "description": "한국공기청정협회에서 소비자에게 신뢰성 있는 공기청정 에어컨디셔너 제품을 제공하기 위하여 제품의 공기청정 성능에 대해서 본 협회가 제정한 공기청정 에어컨디셔너 표준(KACA-CAC-2011)의 인증심사기준에 따라 엄격히 심사를 한 후 적합으로 판정을 받은 제품에게만 부여하는 단체품질 인증마크 입니다."
+    },
+    {
+      "group": "필터",
+      "name": "공기청정 필터",
+      "value": "O",
+      "description": null
+    },
+    {
+      "group": "필터",
+      "name": "극세필터+",
+      "value": "O",
+      "description": "먼지를 걸러내는 극세필터에 항균처리를 해서 먼지에 있는 세균의 번식을 억제하여 위생적인 환경을 조성합니다."
+    },
+    {
+      "group": "위생",
+      "name": "열교환기 세척",
+      "value": "O",
+      "description": "에어컨 밖으로 내보내는 바람을 만드는 열교환기의 먼지와 세균을 제거합니다."
+    },
+    {
+      "group": "위생",
+      "name": "AI 건조",
+      "value": "O(AI건조+)",
+      "description": "냉방 또는 제습 운전을 하다가 제품의 전원을 끌 경우 AI 건조를 시작합니다. 일정 시간 동안 제품을 송풍 상태로 운전하여 열교환기에 남은 수분을 제거합니다."
+    },
+    {
+      "group": "냉방",
+      "name": "아이스 쿨파워",
+      "value": "O",
+      "description": "LG WHISEN만의 강력한 냉방 성능을 의미합니다. 일반 냉방보다 4°C 더 낮은 바람으로 설정 온도까지 더 빠르게 냉방해 줍니다."
+    },
+    {
+      "group": "냉방",
+      "name": "바람세기",
+      "value": "6단계",
+      "description": "원하는 바람 세기를 간편하게 조절할 수 있습니다. 바람세기 버튼을 누를 때마다 약풍-중풍-강풍-자연풍 순으로 반복됩니다."
+    },
+    {
+      "group": "냉방",
+      "name": "인공지능 스마트케어",
+      "value": "패턴학습, 상황학습",
+      "description": "집안 환경 및 사용 패턴을 파악해 알아서 냉방, 청정. 제습을 해주는 기능입니다. 에어컨에 있는 스마트케어 버튼을 누르거나 리모컨으로 실행할 수 있습니다. 인체 감지 센서 탑재 모델은 실내에 사람이 있는지 없는지에 따라 냉방을 조절해 줘 절전 효과를 누릴 수 있습니다."
+    },
+    {
+      "group": "냉방",
+      "name": "간접바람",
+      "value": "O",
+      "description": "에어컨 냉기가 사람에 직접 닿지 않으면서 공간을 쾌적하게 냉방해 주는 기능입니다."
+    },
+    {
+      "group": "냉방",
+      "name": "바람방향(상/하 자동)",
+      "value": "O(6단계)",
+      "description": null
+    },
+    {
+      "group": "냉방",
+      "name": "바람방향(좌/우 자동)",
+      "value": "O(5단계)",
+      "description": "무선 리모컨의 상하 또는 좌우 버튼으로 바람 방향이 자동으로 움직이거나 멈출 수 있습니다. 버튼을 1회 누르면 날개가 움직이고 1회 누르면 날개가 정지합니다."
+    },
+    {
+      "group": "절전",
+      "name": "인공지능 듀얼 인버터",
+      "value": "O",
+      "description": "실내 온도를 감지하여 빠르게 실내 온도를 낮춰줍니다. 설정한 온도가 되면 에너지를 절약하는 운전으로 전환해 쾌적한 상태를 유지해 줍니다."
+    },
+    {
+      "group": "절전",
+      "name": "절전 냉방",
+      "value": "O",
+      "description": "절전 냉방 운전 시 희망온도가 자동으로 조절되어 전기료를 절약할 수 있습니다."
+    },
+    {
+      "group": "제습",
+      "name": "장마철강력제습",
+      "value": "O",
+      "description": "습도가 높아지는 장마철에는 강력하게 제습하여 눅눅함은 잡아주고 쾌적한 공간을 만들어 줍니다."
+    },
+    {
+      "group": "편리",
+      "name": "꺼짐/켜짐 예약 (24시간)",
+      "value": "O",
+      "description": null
+    },
+    {
+      "group": "편리",
+      "name": "ThinQ(Wi-Fi)",
+      "value": "O",
+      "description": null
+    },
+    {
+      "group": "편리",
+      "name": "송풍",
+      "value": "O",
+      "description": "극세 필터가 먼지를 깨끗하게 걸러줍니다. 실내와 온도차이가 없는 바람만 내보내며 실내공기를 순환시키는 기능입니다."
+    },
+    {
+      "group": "편리",
+      "name": "정전보상기능",
+      "value": "O",
+      "description": "제품이 작동 중에 정전이나 다른 원인들로 인해 제품으로 공급되는 전원이 끊어져 작동을 멈추었다가 전원이 다시 공급되면 작동을 멈추기 전의 설정으로 다시 작동합니다."
+    },
+    {
+      "group": "편리",
+      "name": "열대야 절전취침",
+      "value": "O",
+      "description": "인체의 수면 단계에 따라 자동으로 세밀하게 온도를 조절하여 열대야에도 알맞은 온도로 숙면을 취할 수 있습니다."
+    },
+    {
+      "group": "편리",
+      "name": "스마트 진단",
+      "value": "O",
+      "description": "제품의 고장 원인을 진단할 수 있는 기능입니다. 제품에 스마트 진단 로고가 있는 모델에만 적용되며 진단을 진행하는 동안 진단음이 발생하므로 상담원 연결 시에만 사용하시고 평상시에는 작동하지 마시기 바랍니다."
+    },
+    {
+      "group": "편리",
+      "name": "리모컨",
+      "value": "일반",
+      "description": null
+    },
+    {
+      "group": "편리",
+      "name": "음소거(실내기부저 On/Off)",
+      "value": "O",
+      "description": "에어컨의 기능을 설정하거나 변경할 때 상태를 알려주는 알림음을 끄거나 켤 수 있습니다."
+    },
+    {
+      "group": "편리",
+      "name": "UP 가전",
+      "value": "O",
+      "description": "쓰고 있는 제품을 업데이트할 수 있는 기능입니다. 라이프스타일과 취향에 맞춰 업그레이드된 기능으로 매일 새롭고 더 좋은 경험을 하실 수 있습니다. 게다가 제품 사용 중에 불편이나 문제가 있을 때 새로운 기능을 알려주거나 문제를 해결해 주기도 합니다."
+    },
+    {
+      "group": "편리",
+      "name": "강제운전 스위치",
+      "value": "O",
+      "description": "제품 아래에 있는 상하 풍향 조절기를 열고 강제 운전 버튼을 누르면 리모컨 없이 에어컨을 켜고 끌 수 있습니다."
+    },
+    {
+      "group": "디자인",
+      "name": "색상",
+      "value": "크림 그레이",
+      "description": null
+    },
+    {
+      "group": "디자인",
+      "name": "디스플레이",
+      "value": "88 히든",
+      "description": "제품 조작 및 작동상태를 확인 할 수 있는 화면입니다."
+    },
+    {
+      "group": "서비스매뉴얼 실내기 모델명",
+      "name": "벽걸이 실내기 모델명",
+      "value": "SQ06ADJCAJ.AKORY",
+      "description": null
+    },
+    {
+      "group": "기본정보",
+      "name": "품명 및 모델명",
+      "value": "냉방기(SQ06ADJCAJ.AKORY)",
+      "description": null
+    },
+    {
+      "group": "기본정보",
+      "name": "KC 인증 필 유무",
+      "value": "<table ><tbody><tr><td class=\"spec_kcc\"><img src=\"/kr/pdp-common/kcclogo.jpg\" width=\"27\" height=\"40\" alt=\"KC 인증\"></td></tr></tbody></table>",
+      "description": null
+    },
+    {
+      "group": "기본정보",
+      "name": "KC인증조회",
+      "value": "<a href=\"https://www.consumer.go.kr/user/ftc/consumer/crtfc/73/selectCrtfcInfoList.do?crtfcCdS=03\" target=\"_blank\" title=\"새창열림\">공정거래위원회(소비자24)제공 인증정보 조회</a>",
+      "description": null
+    },
+    {
+      "group": "기본정보",
+      "name": "전기용품 안전인증(확인신고) 번호",
+      "value": "HM07125-22168",
+      "description": null
+    },
+    {
+      "group": "기본정보",
+      "name": "전자파 적합성 인증(등록) 번호",
+      "value": "R-R-LGE-SQ221101",
+      "description": null
+    },
+    {
+      "group": "기본정보",
+      "name": "전자파 적합성 인증(등록) 번호 (무선모듈)",
+      "value": "R-C-LGE-LCWB-001",
+      "description": null
+    },
+    {
+      "group": "기본정보",
+      "name": "동일모델의 출시년월",
+      "value": "2023-01",
+      "description": null
+    },
+    {
+      "group": "기본정보",
+      "name": "제조자",
+      "value": "LG전자(주)",
+      "description": null
+    },
+    {
+      "group": "기본정보",
+      "name": "제조국",
+      "value": "한국",
+      "description": null
+    }
+  ],
+  "is_set": "N",
+  "api_control_verified": false,
+  "final_url": "https://www.lge.co.kr/product/air-conditioners/sq06adjcaj-akory?modelId=MD09863827&pdpType=PURCHASE",
+  "html_sha256": "b80d883b4e4054619f8b8ac8bba0623929e8694db1fb4fcb445f14dfe71eefa3",
+  "product_schema": {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "@id": "https://www.lge.co.kr/product/air-conditioners/sq06adjcaj-akory",
+    "url": "https://www.lge.co.kr/product/air-conditioners/sq06adjcaj-akory",
+    "name": "LG 휘센 오브제컬렉션 벽걸이에어컨 (2in1)",
+    "description": "LG전자의 에어컨/에어케어 기기를 소개합니다. 추천 상품부터, 다양한 혜택 정보까지 에어컨/에어케어 홈에서 확인해보세요.",
+    "image": "https://www.lge.co.kr/kr/images/air-conditioners/md09863827/gallery/medium01.jpg",
+    "sku": "SQ06ADJCAJ.AKORY",
+    "model": "SQ06ADJCAJ",
+    "category": "에어컨/에어케어/에어컨",
+    "brand": {
+      "@type": "Brand",
+      "name": "LG",
+      "url": "https://www.lge.co.kr"
+    },
+    "manufacturer": {
+      "@id": "https://www.lge.co.kr#organization"
+    },
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "5.0",
+      "reviewCount": "3",
+      "bestRating": "5",
+      "worstRating": "1"
+    },
+    "additionalProperty": [
+      {
+        "@type": "PropertyValue",
+        "name": "냉방면적(m²)",
+        "value": "18.7"
+      },
+      {
+        "@type": "PropertyValue",
+        "name": "공기청정 필터",
+        "value": "O"
+      },
+      {
+        "@type": "PropertyValue",
+        "name": "인공지능 스마트케어",
+        "value": "패턴학습, 상황학습"
+      }
+    ],
+    "review": [
+      {
+        "@type": "Review",
+        "datePublished": "2026-04-25",
+        "author": {
+          "@type": "Person",
+          "name": "김*정"
+        },
+        "reviewBody": "아이방에 사용하는데 성능 좋고 깔끔해요. 만족합니다~^^",
+        "reviewRating": {
+          "@type": "Rating",
+          "ratingValue": "5",
+          "bestRating": "5",
+          "worstRating": "1"
+        }
+      },
+      {
+        "@type": "Review",
+        "datePublished": "2024-10-01",
+        "author": {
+          "@type": "Person",
+          "name": "권*협"
+        },
+        "reviewBody": "아주아주 맘에 들어요~~^^",
+        "reviewRating": {
+          "@type": "Rating",
+          "ratingValue": "5",
+          "bestRating": "5",
+          "worstRating": "1"
+        }
+      },
+      {
+        "@type": "Review",
+        "datePublished": "2025-01-02",
+        "author": {
+          "@type": "Person",
+          "name": "이*진"
+        },
+        "reviewBody": "1등급이라 전기요금도 절약되고 너무 시원해서 좋습니다...",
+        "reviewRating": {
+          "@type": "Rating",
+          "ratingValue": "5",
+          "bestRating": "5",
+          "worstRating": "1"
+        }
+      }
+    ]
+  },
+  "status": "ok"
+}

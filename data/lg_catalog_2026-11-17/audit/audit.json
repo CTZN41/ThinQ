@@ -1,0 +1,95 @@
+{
+  "snapshot_models": 428,
+  "active_models": 169,
+  "active_new_to_baseline": 45,
+  "categories": [
+    {
+      "category": "광파오븐·전자레인지",
+      "all": 36,
+      "statuses": {
+        "NOT_FOR_SALE": 1,
+        "ACTIVE": 27,
+        "SOLD_OUT": 8
+      },
+      "active_new_to_baseline": 13
+    },
+    {
+      "category": "세탁기",
+      "all": 100,
+      "statuses": {
+        "ACTIVE": 81,
+        "READY_FOR_SALE": 17,
+        "SOLD_OUT": 2
+      },
+      "active_new_to_baseline": 19
+    },
+    {
+      "category": "에어컨",
+      "all": 292,
+      "statuses": {
+        "NOT_FOR_SALE": 195,
+        "READY_FOR_SALE": 30,
+        "ACTIVE": 61,
+        "SOLD_OUT": 6
+      },
+      "active_new_to_baseline": 13
+    }
+  ],
+  "live_checks": [
+    {
+      "category": "세탁기",
+      "current_listing_total": 100
+    },
+    {
+      "model": "F12VVAR",
+      "source_url": "https://www.lge.co.kr/product/washing-machines/f12vvar?modelId=MD10732866&pdpType=PURCHASE",
+      "saved_status": "ACTIVE",
+      "spec_fields": 53,
+      "specs_unchanged": true
+    },
+    {
+      "model": "F19WDWPRX",
+      "source_url": "https://www.lge.co.kr/product/washing-machines/f19wdwprx?modelId=MD10806839&pdpType=PURCHASE",
+      "saved_status": "READY_FOR_SALE",
+      "spec_fields": 88,
+      "specs_unchanged": true
+    },
+    {
+      "category": "광파오븐·전자레인지",
+      "current_listing_total": 36
+    },
+    {
+      "model": "ML39BW",
+      "source_url": "https://www.lge.co.kr/product/microwaves-and-ovens/ml39bw?modelId=MD08534003&pdpType=PURCHASE",
+      "saved_status": "ACTIVE",
+      "spec_fields": 62,
+      "specs_unchanged": true
+    },
+    {
+      "model": "ML32WW1",
+      "source_url": "https://www.lge.co.kr/product/microwaves-and-ovens/ml32ww1?modelId=MD08044721&pdpType=PURCHASE",
+      "saved_status": "NOT_FOR_SALE",
+      "spec_fields": 62,
+      "specs_unchanged": true
+    },
+    {
+      "category": "에어컨",
+      "current_listing_total": 301
+    },
+    {
+      "model": "FQ17GC1ED2",
+      "source_url": "https://www.lge.co.kr/product/air-conditioners/fq17gc1ed2?modelId=MD10781883&pdpType=PURCHASE",
+      "saved_status": "ACTIVE",
+      "spec_fields": 50,
+      "specs_unchanged": true
+    },
+    {
+      "model": "FQ16ET4HS2",
+      "source_url": "https://www.lge.co.kr/product/air-conditioners/fq16et4hs2?modelId=MD10369828&pdpType=PURCHASE",
+      "saved_status": "NOT_FOR_SALE",
+      "spec_fields": 57,
+      "specs_unchanged": true
+    }
+  ],
+  "identity_mismatches": []
+}
