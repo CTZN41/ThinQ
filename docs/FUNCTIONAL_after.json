@@ -1,0 +1,52 @@
+[
+  {
+    "input": "의류는 좀 섞여있긴했는데, 기능성 의류가 좀 많아서 탈수는 약하게 하고, 3~40도 정도로 세탁하니까 좋았어.",
+    "facts": {
+      "temperature_c": null,
+      "time_description": null,
+      "course": null,
+      "laundry": "의류",
+      "outcome": "좋았어",
+      "drying_included": null,
+      "time_min": null,
+      "time_max": null,
+      "rinse_count": null,
+      "spin": "low",
+      "purpose": "functional",
+      "temperature_description": "3~40도 정도",
+      "mixed_laundry": true,
+      "spin_rpm": null,
+      "spin_change": null,
+      "time_kind": "absent"
+    },
+    "status": "needs_confirmation",
+    "candidate_ids": [
+      "functional"
+    ]
+  },
+  {
+    "input": "기능성 의류 위주로 탈수 약, 수온 30도로 세탁하니 좋았어.",
+    "facts": {
+      "temperature_c": 30,
+      "time_description": null,
+      "course": null,
+      "laundry": "기능성 의류 위주",
+      "outcome": "좋았어",
+      "drying_included": null,
+      "time_min": null,
+      "time_max": null,
+      "rinse_count": null,
+      "spin": "low",
+      "purpose": "functional",
+      "temperature_description": "30도",
+      "mixed_laundry": true,
+      "spin_rpm": null,
+      "spin_change": null,
+      "time_kind": "absent"
+    },
+    "status": "recommended",
+    "candidate_ids": [
+      "functional"
+    ]
+  }
+]

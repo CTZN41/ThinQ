@@ -1,0 +1,12 @@
+{
+  "facts": {
+    "temperature_c": 40,
+    "time_description": "40~50분 돌렸을 때(경험한 시간)",
+    "course": null,
+    "laundry": null,
+    "outcome": "뽀송했어",
+    "drying_included": null
+  },
+  "execution_enabled": false,
+  "actual_device_commands": 0
+}

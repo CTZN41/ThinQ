@@ -1,0 +1,20 @@
+[
+  {
+    "category": "washing-machines",
+    "expected_listings": 100,
+    "collected_listings": 100,
+    "complete": true
+  },
+  {
+    "category": "microwaves-and-ovens",
+    "expected_listings": 36,
+    "collected_listings": 36,
+    "complete": true
+  },
+  {
+    "category": "air-conditioners",
+    "expected_listings": 301,
+    "collected_listings": 301,
+    "complete": true
+  }
+]

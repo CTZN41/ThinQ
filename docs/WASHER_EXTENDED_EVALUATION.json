@@ -1,0 +1,200 @@
+[
+  {
+    "case": "correction",
+    "pass": true,
+    "expected": {
+      "temperature_c": 30,
+      "spin": "high"
+    },
+    "facts": {
+      "temperature_c": 30,
+      "time_description": null,
+      "course": null,
+      "laundry": "일반 면 의류",
+      "outcome": null,
+      "drying_included": null,
+      "time_min": null,
+      "time_max": null,
+      "rinse_count": 3,
+      "spin": "high",
+      "purpose": "general",
+      "spin_rpm": null,
+      "spin_change": null,
+      "time_kind": "absent"
+    },
+    "status": "recommended"
+  },
+  {
+    "case": "uncertain_temp",
+    "pass": true,
+    "expected": {
+      "temperature_c": null
+    },
+    "facts": {
+      "temperature_c": null,
+      "time_description": null,
+      "course": null,
+      "laundry": "일반 면 의류",
+      "outcome": null,
+      "drying_included": null,
+      "time_min": null,
+      "time_max": null,
+      "rinse_count": 3,
+      "spin": null,
+      "purpose": "general",
+      "spin_rpm": null,
+      "spin_change": null,
+      "time_kind": "absent"
+    },
+    "status": "needs_confirmation"
+  },
+  {
+    "case": "negated_spin",
+    "pass": true,
+    "expected": {
+      "spin": "low"
+    },
+    "facts": {
+      "temperature_c": 40,
+      "time_description": null,
+      "course": null,
+      "laundry": "일반 면 의류",
+      "outcome": null,
+      "drying_included": null,
+      "time_min": null,
+      "time_max": null,
+      "rinse_count": 3,
+      "spin": "low",
+      "purpose": "general",
+      "spin_rpm": null,
+      "spin_change": null,
+      "time_kind": "absent"
+    },
+    "status": "recommended"
+  },
+  {
+    "case": "reservation",
+    "pass": true,
+    "expected": {
+      "time_kind": "scheduled"
+    },
+    "facts": {
+      "temperature_c": 40,
+      "time_description": "2시간 뒤 끝나도록 예약",
+      "course": null,
+      "laundry": "일반 면 의류",
+      "outcome": null,
+      "drying_included": null,
+      "time_min": 120,
+      "time_max": 120,
+      "rinse_count": 3,
+      "spin": null,
+      "purpose": "general",
+      "spin_rpm": null,
+      "spin_change": null,
+      "time_kind": "scheduled"
+    },
+    "status": "recommended"
+  },
+  {
+    "case": "mixed",
+    "pass": true,
+    "expected": {
+      "purpose": null
+    },
+    "facts": {
+      "temperature_c": 30,
+      "time_description": null,
+      "course": null,
+      "laundry": "울 니트랑 수건",
+      "outcome": null,
+      "drying_included": null,
+      "time_min": null,
+      "time_max": null,
+      "rinse_count": null,
+      "spin": null,
+      "purpose": null,
+      "spin_rpm": null,
+      "spin_change": null,
+      "time_kind": "absent"
+    },
+    "status": "needs_confirmation"
+  },
+  {
+    "case": "rpm",
+    "pass": true,
+    "expected": {
+      "spin": null,
+      "spin_rpm": 1200
+    },
+    "facts": {
+      "temperature_c": 40,
+      "time_description": null,
+      "course": null,
+      "laundry": "일반 면 의류",
+      "outcome": null,
+      "drying_included": null,
+      "time_min": null,
+      "time_max": null,
+      "rinse_count": 3,
+      "spin": null,
+      "purpose": "general",
+      "spin_rpm": 1200,
+      "spin_change": null,
+      "time_kind": "absent"
+    },
+    "status": "needs_confirmation"
+  },
+  {
+    "case": "outcome_only",
+    "pass": true,
+    "expected": {
+      "purpose": null,
+      "temperature_c": null,
+      "spin": null
+    },
+    "facts": {
+      "temperature_c": null,
+      "time_description": null,
+      "course": null,
+      "laundry": null,
+      "outcome": "냄새가 안 나고 뽀송했어.",
+      "drying_included": null,
+      "time_min": null,
+      "time_max": null,
+      "rinse_count": null,
+      "spin": null,
+      "purpose": null,
+      "spin_rpm": null,
+      "spin_change": null,
+      "time_kind": "absent"
+    },
+    "status": "needs_confirmation"
+  },
+  {
+    "case": "unsupported",
+    "pass": true,
+    "expected": {
+      "purpose": "wool",
+      "temperature_c": 60,
+      "spin": "high"
+    },
+    "facts": {
+      "temperature_c": 60,
+      "time_description": null,
+      "course": null,
+      "laundry": "울 니트",
+      "outcome": null,
+      "drying_included": null,
+      "time_min": null,
+      "time_max": null,
+      "rinse_count": null,
+      "spin": "high",
+      "purpose": "wool",
+      "spin_rpm": null,
+      "spin_change": null,
+      "time_kind": "absent"
+    },
+    "status": "unsupported"
+  }
+]

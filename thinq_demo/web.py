@@ -10,6 +10,8 @@ from .config import live_settings
 from .engine import Engine
 from .live import LiveGateway, safe_error
 from . import ai
+from . import washer
+from . import washer_journey
 
 STATIC = Path(__file__).with_name("static")
 ENGINE = web.AppKey("engine", Engine)
@@ -100,9 +102,42 @@ async def ai_apply(request):
 
 async def asset(request):
     name = request.match_info.get("asset", "index.html")
-    if name not in {"index.html", "app.js", "style.css"}:
+    if name not in {"index.html", "app.js", "style.css", "washer.html", "washer.js"}:
         raise web.HTTPNotFound()
     return web.FileResponse(STATIC / name)
+
+
+async def washer_analyze(request):
+    if request.app[ENGINE].mode != 'MOCK':
+        return web.json_response({'error':'세탁기 경험 비교는 MOCK 서버에서 사용하세요.'},status=400)
+    data=await body(request)
+    try:
+        return web.json_response(await washer.analyze(data.get('source'),data.get('experience')))
+    except (ValueError,TypeError,KeyError):
+        return web.json_response({'error':'분석할 수 없습니다. 모델·입력값·OpenAI 연결을 확인하세요.'},status=400)
+
+
+async def washer_simulate(request):
+    if request.app[ENGINE].mode != 'MOCK':
+        return web.json_response({'error':'MOCK 전용 기능입니다.'},status=400)
+    data=await body(request)
+    return web.json_response(washer.simulate(data.get('token')))
+
+
+async def washer_flow(request):
+    if request.app[ENGINE].mode != 'MOCK':
+        return web.json_response({'error':'경험 카드 기능은 MOCK 전용입니다.'},status=400)
+    if request.method == 'GET':
+        return web.json_response({'cards':washer_journey.list_cards()})
+    data=await body(request)
+    try:
+        action=data.get('action')
+        if action=='begin':result=await washer_journey.begin(data.get('source'),data.get('experience'))
+        elif action=='load':result=washer_journey.load(data.get('card_id'))
+        else:result=washer_journey.act(data.get('session_id'),action,data)
+        return web.json_response(result)
+    except (ValueError,KeyError,TypeError):
+        return web.json_response({'error':'입력·선택·세션을 확인하세요. 실행하지 못했습니다.'},status=400)
 
 
 def create_app(engine=None, port=8765):
@@ -119,6 +154,10 @@ def create_app(engine=None, port=8765):
     app.router.add_post("/api/apply", apply)
     app.router.add_get("/api/ai/status", ai_status)
     app.router.add_post("/api/ai/apply", ai_apply)
+    app.router.add_post('/api/washer/analyze', washer_analyze)
+    app.router.add_post('/api/washer/simulate', washer_simulate)
+    app.router.add_get('/api/washer/cards', washer_flow)
+    app.router.add_post('/api/washer/flow', washer_flow)
     app.router.add_get("/", asset)
     app.router.add_get("/{asset}", asset)
     if app[ENGINE].gateway:

@@ -1,0 +1,28 @@
+{
+  "total_models": 428,
+  "success": 428,
+  "new_to_baseline": 293,
+  "previous_not_listed": 6,
+  "changed_spec_fields": 1621,
+  "identity_mismatches": [],
+  "categories": [
+    {
+      "category": "광파오븐·전자레인지",
+      "models": 36,
+      "new_to_baseline": 20,
+      "success": 36
+    },
+    {
+      "category": "세탁기",
+      "models": 100,
+      "new_to_baseline": 36,
+      "success": 100
+    },
+    {
+      "category": "에어컨",
+      "models": 292,
+      "new_to_baseline": 237,
+      "success": 292
+    }
+  ]
+}

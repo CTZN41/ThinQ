@@ -1,0 +1,59 @@
+[
+  {
+    "case": "relative_only",
+    "passed": true,
+    "facts": {
+      "temperature_c": null,
+      "time_description": null,
+      "course": null,
+      "laundry": null,
+      "outcome": "물기가 잘 말라서 냄새가 잘 안 나고 잘 말랐어",
+      "drying_included": null,
+      "time_min": null,
+      "time_max": null,
+      "rinse_count": null,
+      "spin": null,
+      "purpose": null,
+      "spin_change": "stronger",
+      "time_kind": "absent"
+    }
+  },
+  {
+    "case": "relative_context",
+    "passed": true,
+    "facts": {
+      "temperature_c": 40,
+      "time_description": "전체 40~50분",
+      "course": null,
+      "laundry": "일반 면 의류",
+      "outcome": "물기가 잘 말라서 냄새가 잘 안 나고 잘 말랐어",
+      "drying_included": null,
+      "time_min": 40,
+      "time_max": 50,
+      "rinse_count": 3,
+      "spin": null,
+      "purpose": "general",
+      "spin_change": "stronger",
+      "time_kind": "observed_total"
+    }
+  },
+  {
+    "case": "explicit_final",
+    "passed": true,
+    "facts": {
+      "temperature_c": 40,
+      "time_description": "전체 40~50분",
+      "course": null,
+      "laundry": "일반 면 의류",
+      "outcome": "냄새가 덜 나고 잘 말랐다고 관찰함",
+      "drying_included": null,
+      "time_min": 40,
+      "time_max": 50,
+      "rinse_count": 3,
+      "spin": "high",
+      "purpose": "general",
+      "spin_change": "stronger",
+      "time_kind": "observed_total"
+    }
+  }
+]
