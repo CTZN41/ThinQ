@@ -61,6 +61,10 @@ async def detail(request):
     return web.json_response(await request.app[ENGINE].detail(request.match_info["device_id"]))
 
 
+async def last_result(request):
+    return web.json_response(request.app[ENGINE].last_results.get(request.match_info['device_id'], {}))
+
+
 async def prepare(request):
     data = await body(request)
     return web.json_response(await request.app[ENGINE].prepare(data["device_id"], data["control_id"], data["params"]))
@@ -81,7 +85,7 @@ async def apply(request):
 async def ai_status(request):
     key, model = ai.settings()
     return web.json_response({'configured': bool(key), 'model': model,
-                              'enabled': request.app[ENGINE].mode == 'MOCK'})
+                              'enabled': request.app[ENGINE].mode == 'MOCK' or request.app[ENGINE].allow_ai_live})
 
 
 async def ai_apply(request):
@@ -109,6 +113,7 @@ def create_app(engine=None, port=8765):
     app.router.add_get("/api/config", config)
     app.router.add_get("/api/devices", devices)
     app.router.add_get("/api/devices/{device_id}", detail)
+    app.router.add_get('/api/devices/{device_id}/last-result', last_result)
     app.router.add_post("/api/prepare", prepare)
     app.router.add_post("/api/confirm", confirm)
     app.router.add_post("/api/apply", apply)
@@ -131,6 +136,7 @@ def main():
     parser = argparse.ArgumentParser(description="ThinQ local demo")
     parser.add_argument("--mode", choices=("mock", "live"), default="mock")
     parser.add_argument("--port", type=int, default=8765)
+    parser.add_argument('--ai-live', action='store_true', help='Enable user-triggered AI control in LIVE mode')
     args = parser.parse_args()
     gateway = None
     if args.mode == "live":
@@ -139,7 +145,7 @@ def main():
         except ValueError as exc:
             parser.exit(2, str(exc) + "\n")
     print(f"ThinQ {args.mode.upper()} | KR | http://127.0.0.1:{args.port}", flush=True)
-    web.run_app(create_app(Engine(gateway), args.port), host="127.0.0.1", port=args.port, access_log=None, print=None)
+    web.run_app(create_app(Engine(gateway, allow_ai_live=args.ai_live), args.port), host="127.0.0.1", port=args.port, access_log=None, print=None)
 
 
 if __name__ == "__main__":

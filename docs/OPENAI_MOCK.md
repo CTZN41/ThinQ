@@ -1,5 +1,7 @@
 # 자연어 AI 모의 제어 테스트
 
+**최신 모델: gpt-6-luna.** Luna·Terra·Sol 비교 시험 후 선택했다. [시험 결과](AI_NATURAL_LANGUAGE_EVALUATION.md). 아래 GPT-4.1 mini 연결 기록은 최초 검증 이력이다.
+
 ## 실제 OpenAI 연결 검증 (2026-11-17)
 
 사용자가 `.env`의 `OPENAI_API` 항목에 저장한 키를 AI 로더가 읽는 `.env.openai`의 `OPENAI_API_KEY`로 연결했다. 모델은 `gpt-4.1-mini`로 설정했다. 이후 키 변경은 `.env.openai`에서 수행한다.

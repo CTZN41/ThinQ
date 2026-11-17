@@ -49,6 +49,32 @@ class FakeGateway:
 
 
 class SDKTests(unittest.IsolatedAsyncioTestCase):
+    async def test_explicit_power_on_before_mode(self):
+        gateway = FakeGateway()
+        gateway.profile['property']['airConJobMode'] = {'currentJobMode': enum(['FAN', 'AIR_DRY'])}
+        sent = []
+        async def record(device_id, payload):
+            sent.append(payload)
+        gateway.control = record
+        await Engine(gateway).apply('test-ac', [
+            {'control_id':'MAIN:set_current_job_mode','params':{'mode':'AIR_DRY'}},
+            {'control_id':'MAIN:set_air_con_operation_mode','params':{'operation':'POWER_ON'}}])
+        self.assertEqual(sent[0]['operation']['airConOperationMode'], 'POWER_ON')
+        self.assertEqual(sent[1]['airConJobMode']['currentJobMode'], 'AIR_DRY')
+
+    async def test_error_details_without_secret(self):
+        gateway = FakeGateway()
+        async def fail(*args):
+            exc = RuntimeError('private-token-must-not-appear')
+            exc.code = '1308'
+            raise exc
+        gateway.control = fail
+        engine = Engine(gateway)
+        r = await engine.apply('test-ac',[{'control_id':'MAIN:set_air_con_operation_mode','params':{'operation':'POWER_ON'}}])
+        self.assertEqual(r['results'][0]['result']['error_code'], '1308')
+        self.assertNotIn('private-token', str(r))
+        self.assertEqual(engine.last_results['test-ac'], r)
+
     async def test_direct_apply(self):
         gateway = FakeGateway()
         engine = Engine(gateway)

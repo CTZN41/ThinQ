@@ -15,11 +15,13 @@ def digest(value):
 
 
 class Engine:
-    def __init__(self, gateway=None):
+    def __init__(self, gateway=None, allow_ai_live=False):
         self.gateway = gateway
+        self.allow_ai_live = allow_ai_live
         self.mode = "LIVE" if gateway else "MOCK"
         self.mock = MockCatalog()
         self.pending = {}
+        self.last_results = {}
         self.lock = asyncio.Lock()
 
     async def devices(self):
@@ -76,12 +78,14 @@ class Engine:
                 "control_id": control_id, "expires_in": 120,
                 "message": "모의 값만 변경됩니다." if not self.gateway else "아래 요청이 실제 제품으로 전송됩니다. 시작 명령 포함 여부도 확인하세요."}
 
-    async def apply(self, device_id, changes):
+    async def apply(self, device_id, changes, expected_snapshot=None):
         """Validate the complete selection before sending; stop on uncertain delivery."""
         if not isinstance(changes, list) or not 1 <= len(changes) <= 50:
             raise ValueError("변경 항목이 필요합니다.")
         async with self.lock:
             detail = await self.detail(device_id)
+            if expected_snapshot is not None and digest([detail['raw_profile'], detail['state']]) != expected_snapshot:
+                raise ValueError('AI 처리 중 제품 상태가 바뀌었습니다. 최신 상태에서 다시 요청하세요.')
             supported = {c["id"] for c in detail["controls"]}
             seen, compiled = set(), []
             for change in changes:
@@ -96,6 +100,9 @@ class Engine:
                         raise ValueError("value 값 하나가 필요합니다.")
                     payload = self.mock.prepare(device_id, cid, params["value"])
                 compiled.append((cid, payload))
+            # Only reorder an explicitly requested AC power-on; never invent one.
+            if self.gateway:
+                compiled.sort(key=lambda item: 0 if item[1].get('operation', {}).get('airConOperationMode') == 'POWER_ON' else 1)
             results = []
             for cid, payload in compiled:
                 try:
@@ -106,12 +113,17 @@ class Engine:
                         fresh = self.mock.prepare(device_id, cid, payload.value)
                         result = self.mock.simulate(fresh)
                     results.append({"control_id": cid, "result": result})
-                except Exception:
-                    results.append({"control_id": cid, "result": {"status": "UNKNOWN"}})
+                except Exception as exc:
+                    code = str(getattr(exc, 'code', ''))
+                    code = code if code.isdigit() and len(code) <= 8 else ''
+                    results.append({"control_id": cid, "result": {"status": "UNKNOWN",
+                                    "error_code": code or '확인 불가', "message": safe_error(exc)}})
                     break
-            return {"mode": self.mode, "results": results,
+            result = {"mode": self.mode, "results": results,
                     "remaining": len(compiled) - len(results),
                     "note": "선택한 설정을 순서대로 전송했습니다. 일부 실패 시 이전 설정은 되돌리지 않으며 자동 재전송하지 않습니다. 실제 작동은 제품 상태로 확인하세요."}
+            self.last_results[device_id] = result
+            return result
 
     async def confirm(self, ticket):
         async with self.lock:

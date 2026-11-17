@@ -5,6 +5,27 @@ from thinq_demo.engine import Engine
 
 
 class AITests(unittest.IsolatedAsyncioTestCase):
+    async def test_state_change_during_generation_blocked(self):
+        engine = Engine()
+        async def changed(*args):
+            await engine.apply('mock-ac', [{'control_id':'/property/temperature/targetTemperature','params':{'value':28}}])
+            return {'message':'낮춥니다', 'changes':[{'control_id':'/property/temperature/targetTemperature','value':24}]}
+        with patch('thinq_demo.ai.generate', side_effect=changed):
+            with self.assertRaisesRegex(ValueError, '상태가 바뀌었습니다'):
+                await execute(engine,'mock-ac','현재보다 1도 낮춰줘')
+        self.assertEqual((await engine.detail('mock-ac'))['state']['/property/temperature/targetTemperature'],28)
+
+    async def test_offline_stops_before_paid_call(self):
+        with patch('thinq_demo.ai.generate', AsyncMock()) as generate:
+            with self.assertRaises(ValueError):
+                await execute(Engine(),'mock-offline','켜줘')
+            generate.assert_not_called()
+
+    async def test_malformed_plan_blocked(self):
+        with patch('thinq_demo.ai.generate', AsyncMock(return_value={'message':'설정','changes':[{'value':24}]})):
+            with self.assertRaises(ValueError):
+                await execute(Engine(),'mock-ac','24도로')
+
     async def test_generated_settings_applied(self):
         engine = Engine()
         plan = {'message': '24도로 설정합니다.', 'changes': [

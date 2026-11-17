@@ -1,0 +1,68 @@
+[
+  {
+    "repeat": 1,
+    "pass": true,
+    "result": {
+      "message": "아래칸의 현재 설정 온도 180도는 200도를 넘지 않으므로, 아래칸을 195도로 설정할 계획입니다. 위칸은 변경하지 않습니다.",
+      "changes": [
+        {
+          "control_id": "/property/1/temperature/0/targetTemperature",
+          "value": 195
+        }
+      ],
+      "applied": true,
+      "result": {
+        "mode": "MOCK",
+        "results": [
+          {
+            "control_id": "/property/1/temperature/0/targetTemperature",
+            "result": {
+              "mode": "MOCK",
+              "real_device_command_sent": false,
+              "deviceId": "mock-oven",
+              "key": "/property/1/temperature/0/targetTemperature",
+              "before": 180,
+              "after": 195,
+              "note": "메모리 안의 모의 값만 변경했습니다. 실제 가전 동작/상태 전이 시뮬레이션은 아닙니다."
+            }
+          }
+        ],
+        "remaining": 0,
+        "note": "선택한 설정을 순서대로 전송했습니다. 일부 실패 시 이전 설정은 되돌리지 않으며 자동 재전송하지 않습니다. 실제 작동은 제품 상태로 확인하세요."
+      }
+    }
+  },
+  {
+    "repeat": 2,
+    "pass": true,
+    "result": {
+      "message": "아래칸의 현재 설정 온도는 180도라 200도를 넘지 않습니다. 아래칸을 195도로 설정하고, 위칸은 그대로 두는 계획입니다.",
+      "changes": [
+        {
+          "control_id": "/property/1/temperature/0/targetTemperature",
+          "value": 195
+        }
+      ],
+      "applied": true,
+      "result": {
+        "mode": "MOCK",
+        "results": [
+          {
+            "control_id": "/property/1/temperature/0/targetTemperature",
+            "result": {
+              "mode": "MOCK",
+              "real_device_command_sent": false,
+              "deviceId": "mock-oven",
+              "key": "/property/1/temperature/0/targetTemperature",
+              "before": 180,
+              "after": 195,
+              "note": "메모리 안의 모의 값만 변경했습니다. 실제 가전 동작/상태 전이 시뮬레이션은 아닙니다."
+            }
+          }
+        ],
+        "remaining": 0,
+        "note": "선택한 설정을 순서대로 전송했습니다. 일부 실패 시 이전 설정은 되돌리지 않으며 자동 재전송하지 않습니다. 실제 작동은 제품 상태로 확인하세요."
+      }
+    }
+  }
+]

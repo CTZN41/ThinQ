@@ -1,0 +1,215 @@
+{
+  "model": "gpt-4.1",
+  "passed": 6,
+  "total": 6,
+  "cases": [
+    {
+      "id": "conditional_power",
+      "prompt": "꺼져 있으면 켜고, 온도는 현재 설정에서 2도 올려줘.",
+      "expected": {
+        "/property/operation/airConOperationMode": "POWER_ON",
+        "/property/temperature/targetTemperature": 27
+      },
+      "actual": {
+        "/property/operation/airConOperationMode": "POWER_ON",
+        "/property/temperature/targetTemperature": 27
+      },
+      "pass": true,
+      "response": {
+        "message": "에어컨이 꺼져 있으므로 켜고, 목표 온도를 현재보다 2도 올려 27도로 설정할 예정입니다.",
+        "changes": [
+          {
+            "control_id": "/property/operation/airConOperationMode",
+            "value": "POWER_ON"
+          },
+          {
+            "control_id": "/property/temperature/targetTemperature",
+            "value": 27
+          }
+        ],
+        "applied": true,
+        "result": {
+          "mode": "MOCK",
+          "results": [
+            {
+              "control_id": "/property/operation/airConOperationMode",
+              "result": {
+                "mode": "MOCK",
+                "real_device_command_sent": false,
+                "deviceId": "mock-ac",
+                "key": "/property/operation/airConOperationMode",
+                "before": "POWER_OFF",
+                "after": "POWER_ON",
+                "note": "메모리 안의 모의 값만 변경했습니다. 실제 가전 동작/상태 전이 시뮬레이션은 아닙니다."
+              }
+            },
+            {
+              "control_id": "/property/temperature/targetTemperature",
+              "result": {
+                "mode": "MOCK",
+                "real_device_command_sent": false,
+                "deviceId": "mock-ac",
+                "key": "/property/temperature/targetTemperature",
+                "before": 25,
+                "after": 27,
+                "note": "메모리 안의 모의 값만 변경했습니다. 실제 가전 동작/상태 전이 시뮬레이션은 아닙니다."
+              }
+            }
+          ],
+          "remaining": 0,
+          "note": "선택한 설정을 순서대로 전송했습니다. 일부 실패 시 이전 설정은 되돌리지 않으며 자동 재전송하지 않습니다. 실제 작동은 제품 상태로 확인하세요."
+        }
+      },
+      "seconds": 1.16
+    },
+    {
+      "id": "relative_roundtrip",
+      "prompt": "지금보다 2도 낮추려 했는데 반 도만 낮추는 걸로 할게. 전원 상태는 유지해.",
+      "expected": {
+        "/property/temperature/targetTemperature": 24.5
+      },
+      "actual": {
+        "/property/temperature/targetTemperature": 24.5
+      },
+      "pass": true,
+      "response": {
+        "message": "목표 온도를 현재보다 0.5도 낮춰 24.5도로 설정하고, 전원 상태는 현재대로 유지합니다.",
+        "changes": [
+          {
+            "control_id": "/property/temperature/targetTemperature",
+            "value": 24.5
+          }
+        ],
+        "applied": true,
+        "result": {
+          "mode": "MOCK",
+          "results": [
+            {
+              "control_id": "/property/temperature/targetTemperature",
+              "result": {
+                "mode": "MOCK",
+                "real_device_command_sent": false,
+                "deviceId": "mock-ac",
+                "key": "/property/temperature/targetTemperature",
+                "before": 25,
+                "after": 24.5,
+                "note": "메모리 안의 모의 값만 변경했습니다. 실제 가전 동작/상태 전이 시뮬레이션은 아닙니다."
+              }
+            }
+          ],
+          "remaining": 0,
+          "note": "선택한 설정을 순서대로 전송했습니다. 일부 실패 시 이전 설정은 되돌리지 않으며 자동 재전송하지 않습니다. 실제 작동은 제품 상태로 확인하세요."
+        }
+      },
+      "seconds": 1.36
+    },
+    {
+      "id": "fridge_disable",
+      "prompt": "급속은 꺼진 상태로 두고 냉장고 설정온도만 4도로 올려줘.",
+      "expected": {
+        "/property/temperature/targetTemperature": 4
+      },
+      "actual": {
+        "/property/temperature/targetTemperature": 4
+      },
+      "pass": true,
+      "response": {
+        "message": "급속 기능은 그대로 꺼진 상태로 두고, 냉장고의 설정 온도만 4도로 올리도록 계획하겠습니다.",
+        "changes": [
+          {
+            "control_id": "/property/temperature/targetTemperature",
+            "value": 4
+          }
+        ],
+        "applied": true,
+        "result": {
+          "mode": "MOCK",
+          "results": [
+            {
+              "control_id": "/property/temperature/targetTemperature",
+              "result": {
+                "mode": "MOCK",
+                "real_device_command_sent": false,
+                "deviceId": "mock-fridge",
+                "key": "/property/temperature/targetTemperature",
+                "before": 3,
+                "after": 4,
+                "note": "메모리 안의 모의 값만 변경했습니다. 실제 가전 동작/상태 전이 시뮬레이션은 아닙니다."
+              }
+            }
+          ],
+          "remaining": 0,
+          "note": "선택한 설정을 순서대로 전송했습니다. 일부 실패 시 이전 설정은 되돌리지 않으며 자동 재전송하지 않습니다. 실제 작동은 제품 상태로 확인하세요."
+        }
+      },
+      "seconds": 1.64
+    },
+    {
+      "id": "oven_lower",
+      "prompt": "위칸 온도는 그대로, 아래칸만 현재보다 15도 올려줘.",
+      "expected": {
+        "/property/1/temperature/0/targetTemperature": 195
+      },
+      "actual": {
+        "/property/1/temperature/0/targetTemperature": 195
+      },
+      "pass": true,
+      "response": {
+        "message": "아래칸 온도를 현재 180도에서 15도 올려 195도로 설정할 수 있습니다. 위칸 온도는 변경하지 않습니다.",
+        "changes": [
+          {
+            "control_id": "/property/1/temperature/0/targetTemperature",
+            "value": 195
+          }
+        ],
+        "applied": true,
+        "result": {
+          "mode": "MOCK",
+          "results": [
+            {
+              "control_id": "/property/1/temperature/0/targetTemperature",
+              "result": {
+                "mode": "MOCK",
+                "real_device_command_sent": false,
+                "deviceId": "mock-oven",
+                "key": "/property/1/temperature/0/targetTemperature",
+                "before": 180,
+                "after": 195,
+                "note": "메모리 안의 모의 값만 변경했습니다. 실제 가전 동작/상태 전이 시뮬레이션은 아닙니다."
+              }
+            }
+          ],
+          "remaining": 0,
+          "note": "선택한 설정을 순서대로 전송했습니다. 일부 실패 시 이전 설정은 되돌리지 않으며 자동 재전송하지 않습니다. 실제 작동은 제품 상태로 확인하세요."
+        }
+      },
+      "seconds": 1.11
+    },
+    {
+      "id": "unsupported_step",
+      "prompt": "에어컨을 켜고 목표 온도를 23.7도로 맞춰줘. 반올림하지는 마.",
+      "expected": {},
+      "actual": {},
+      "pass": true,
+      "response": {
+        "message": "에어컨을 켜고, 목표 온도를 23.7도로 설정해달라고 하셨으나, 온도는 0.5도 단위(예: 23.5도, 24도)로만 설정할 수 있습니다. 따라서 요청하신 값을 지원할 수 없어 변경할 수 없습니다. 원하시는 온도를 0.5도 단위로 지정해 주세요.",
+        "changes": [],
+        "applied": false
+      },
+      "seconds": 1.48
+    },
+    {
+      "id": "missing_history",
+      "prompt": "지난번 내가 좋아했던 설정으로 돌려줘.",
+      "expected": {},
+      "actual": {},
+      "pass": true,
+      "response": {
+        "message": "이전에 선호하셨던 설정이 무엇인지 정보가 없어 요청하신 설정으로 변경할 수 없습니다. 원하는 설정값(예: 희망 온도, 전원 상태 등)을 명확하게 알려주세요.",
+        "changes": [],
+        "applied": false
+      },
+      "seconds": 1.22
+    }
+  ]
+}
