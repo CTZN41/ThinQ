@@ -1,0 +1,10 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>우리집 · ThinQ 연결 데모</title><link rel="stylesheet" href="/style.css"><script src="/app.js" defer></script></head>
+<body><div class="app"><header><a class="brand" href="/">ThinQ<span>연결 데모</span></a><div id="mode" class="badge">연결 확인 중</div></header>
+<main><section class="welcome"><div><p class="eyebrow">나의 스마트홈</p><h1>우리집</h1><p id="description">가전의 상태를 확인하고 있어요.</p></div><button id="refresh" class="round">↻ <span>새로고침</span></button></section>
+<div class="connection"><span class="dot"></span><span id="connectionText">ThinQ 계정 연결 확인 중</span><span class="country">대한민국 · KR</span></div>
+<div id="error" role="alert" hidden></div>
+<section class="section-title"><h2>우리집 가전 <span id="count">0</span></h2><span>제품을 선택해 관리하세요</span></section>
+<div class="workspace"><aside id="devices" aria-label="제품 목록">제품을 불러오는 중…</aside><section id="detail" class="detail"><div class="empty"><div class="home-symbol">⌂</div><h2>어떤 가전을 살펴볼까요?</h2><p>제품 카드를 선택하면 상태와 설정을 확인할 수 있어요.</p></div></section></div>
+<section class="history"><h2>최근 실행 결과</h2><pre id="result" aria-live="polite">아직 실행한 명령이 없어요.</pre></section>
+<footer>ThinQ API를 활용한 개인 개발 데모입니다. LG 공식 앱이 아닙니다.<br>제품이 지원하는 기능만 표시되며, 설정 적용 버튼으로 실제 가전에 전송됩니다.</footer></main>
+</div></body></html>
